@@ -1,6 +1,6 @@
-# Dengue API
+# Previsão dengue
 
-API de monitoramento e predição de casos de dengue — Projeto Integrador UNIVESP (PJI410).
+Monitoramento e predição de casos de dengue — Projeto Integrador UNIVESP (PJI410).
 
 Foco geográfico: **São Paulo (capital)**, usando como referência dados do InfoDengue (geocode 3550308).
 
