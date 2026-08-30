@@ -4,9 +4,9 @@ Monitoramento e predição de casos de dengue — Projeto Integrador UNIVESP (PJ
 
 Foco geográfico: **São Paulo (capital)**, usando como referência dados do InfoDengue (geocode 3550308).
 
-## ⚠️ Status atual: dados mockados
+## ⚠️ Status atual: dados simulados
 
-Os endpoints abaixo retornam **dados fake** por enquanto (definidos direto no código), só para permitir que o restante do projeto já comece a integrar usando o formato final.
+Os endpoints abaixo retornam **dados simulados** por enquanto (definidos direto no código), só para permitir que o restante do projeto já comece a integrar usando o formato final.
 
 Quando a integração com o banco PostgreSQL estiver pronta, os dados vão vir do banco real — **mas o formato do JSON de resposta (nomes dos campos) não muda**, então nada quebra em quem já estiver consumindo a API.
 
