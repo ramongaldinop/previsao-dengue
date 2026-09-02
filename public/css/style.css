@@ -1,0 +1,39 @@
+* {
+    font-family: sans-serif;
+    justify-content: center;
+}
+
+#navbar {
+    border-bottom: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+#navbar a {
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+#navbar ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+#navbar li {
+    margin-left: 1em;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.semana-display {
+    margin-bottom: 2em;
+}
+
+.semana-display p {
+    margin: 0.2em 0;
+}

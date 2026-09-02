@@ -29,7 +29,7 @@ const casosFake = [
 
 // GET /casos - lista todos os casos
 router.get('/', (req, res) => {
-  res.json(casosFake);
+  res.render('casos', {casosFake});
 });
 
 // GET /casos/:semana - busca um caso específico pela semana epidemiológica

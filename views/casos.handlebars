@@ -1,0 +1,11 @@
+<div class="main-txt">
+    <h1>Análise:</h1>
+    {{#each casosFake}}
+        <div class="semana-display">
+            <p><b>Semana:</b> {{this.semana_epidemiologica}}</p>
+            <p><b>Data de inicio:</b> {{this.data_inicio}}</p>
+            <p><b>Casos:</b> {{this.casos}}</p>
+            <p><b>Nível de alerta:</b> {{this.nivel_alerta}}</p>
+        </div>
+    {{/each}}
+</div>
