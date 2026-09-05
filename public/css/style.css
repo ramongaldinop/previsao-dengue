@@ -3,25 +3,56 @@
     justify-content: center;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30%;
+    height: auto;
+}
+
 #navbar {
     border-bottom: 1px solid #ccc;
     padding: 1em;
     margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-#navbar a {
-    font-size: 1.3em;
-    text-decoration: none;
-}
-
-#navbar ul{
+#navbar ul {
     display: flex;
+    justify-content: center;
     list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 #navbar li {
-    margin-left: 1em;
+    margin: 0 1em;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #db7c00;
 }
 
 body {
