@@ -1,17 +1,8 @@
 # Node
 node_modules/
-backend/node_modules/
 
 # Variáveis de ambiente
 .env
-backend/.env
-
-# Python / ML
-__pycache__/
-.venv/
-ml/dados/*.csv
-ml/modelos/*
-!ml/modelos/.gitkeep
 
 # Sistema
 .DS_Store

@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars')
 require('dotenv').config();
 
 const casos = require('./src/casos');
+const conn = require('./db/conn')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
