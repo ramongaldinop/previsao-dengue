@@ -1,6 +1,7 @@
 const {Sequelize} = require('sequelize')
 
-const sequelize = new Sequelize('dvision','root',process.env.PW, {
+console.log(process.env.DB_USERNAME)
+const sequelize = new Sequelize('dvision', process.env.DB_USERNAME, process.env.PW, {
     host: process.env.HOST,
     dialect: 'postgres',
 })

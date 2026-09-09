@@ -32,13 +32,35 @@ router.get('/', (req, res) => {
   res.render('casos', {casosFake});
 });
 
-// GET /casos/:semana - busca um caso específico pela semana epidemiológica
-router.get('/:semana', (req, res) => {
-  const caso = casosFake.find(c => c.semana_epidemiologica === parseInt(req.params.semana));
-  if (!caso) {
-    return res.status(404).json({ erro: "Semana não encontrada" });
+router.get('/novo', (req,res)=> {
+  res.render('registrarsemana')
+})
+
+router.post('/novo', async (req,res)=>{
+  novocaso = {
+    semana_epidemiologica: req.body.semana_epidemiologica,
+    data_inicio: req.body.data_inicio,
+    casos: req.body.casos,
+    casos_estimados: req.body.casos_estimados,
+    nivel_alerta: req.body.nivel_alerta,
+    rt: req.body.rt,
+    temp_media: req.body.temp_media,
+    umid_media: req.body.umid_media,
+    municipio_nome: req.body.municipio_nome
   }
-  res.json(caso);
-});
+
+  console.log(novocaso)
+  
+  await casos.create(novocaso)
+})
+
+// GET /casos/:semana - busca um caso específico pela semana epidemiológica
+// router.get('/:semana', (req, res) => {
+//   const caso = casosFake.find(c => c.semana_epidemiologica === parseInt(req.params.semana));
+//   if (!caso) {
+//     return res.status(404).json({ erro: "Semana não encontrada" });
+//   }
+//   res.json(caso);
+// });
 
 module.exports = router;
