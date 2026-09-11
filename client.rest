@@ -1,0 +1,17 @@
+GET http://localhost:3000/dbtest HTTP/1.1
+
+###
+POST http://localhost:3000/casos/novo
+Content-Type: application/json
+
+{
+    "semana_epidemiologica": 202352,
+    "data_inicio": "2023-12-24",
+    "casos": 942,
+    "casos_estimados": 942.0,
+    "nivel_alerta": 2,
+    "rt": 1.0456612,
+    "temp_media": 23.4,
+    "umid_media": 75.5,
+    "municipio_nome": "São Paulo"
+}

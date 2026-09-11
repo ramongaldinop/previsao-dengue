@@ -29,8 +29,8 @@ app.get('/', (req, res) => {
 // Rota de teste db:
 app.get('/dbtest', (req,res) => {
   conn.sync()
-    .then(() => console.log('Tabelas sincronizadas'))
-    .catch(err => console.error('Erro ao sincronizar:', err));
+    .then(() => res.json('Tabelas sincronizadas'))
+    .catch(err => res.json('Erro ao sincronizar:', err));
 })
 
 // Rotas principais

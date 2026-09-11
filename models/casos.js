@@ -10,12 +10,16 @@ const casos = db.define('caso', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    casos: {
+    num_casos: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
     casos_estimados: {
         type: DataTypes.FLOAT,
+        allowNull: false
+    },
+    nivel_alerta: {
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     rt: {
