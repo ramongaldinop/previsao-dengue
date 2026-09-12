@@ -2,36 +2,17 @@ const express = require('express');
 const router = express.Router();
 const casos = require('../../models/casos')
 
-// Dado fake, só pra testar a rota enquanto o banco não existe
-const casosFake = [
-  {
-    "semana_epidemiologica": 202352,
-    "data_inicio": "2023-12-24",
-    "casos": 942,
-    "casos_estimados": 942.0,
-    "nivel_alerta": 2,
-    "rt": 1.0456612,
-    "temp_media": 23.4,
-    "umid_media": 75.5,
-    "municipio_nome": "São Paulo"
-  },
-  {
-    "semana_epidemiologica": 202351,
-    "data_inicio": "2023-12-17",
-    "casos": 815,
-    "casos_estimados": 815.0,
-    "nivel_alerta": 2,
-    "rt": 0.8945785,
-    "temp_media": 22.8,
-    "umid_media": 81.9,
-    "municipio_nome": "São Paulo"
-  }
-];
-
 // GET /casos - lista todos os casos
-router.get('/', (req, res) => {
-  res.render('casos', {casosFake});
+router.get('/', async (req, res) => {
+  const list_casos = await casos.findAll({raw: true})
+
+  res.render('casos', {list_casos});
 });
+
+router.get('/lista', async (req,res) => {
+  const list_casos = await casos.findAll({raw: true})
+  res.json(list_casos)
+})
 
 router.get('/novo', (req,res)=> {
   res.render('registrarsemana')

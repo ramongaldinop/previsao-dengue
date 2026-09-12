@@ -21,10 +21,13 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-// Rota de teste rápido
 app.get('/', (req, res) => {
   res.render('home');
 });
+
+app.get('/analise', (req,res) => {
+  res.render('analise', {analise: true});
+})
 
 // Rota de teste db:
 app.get('/dbtest', (req,res) => {

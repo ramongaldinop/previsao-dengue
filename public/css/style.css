@@ -62,9 +62,14 @@ body {
 }
 
 .semana-display {
+    text-align: left;
     margin-bottom: 2em;
 }
 
 .semana-display p {
     margin: 0.2em 0;
+}
+
+.main-txt {
+    text-align: center;
 }
