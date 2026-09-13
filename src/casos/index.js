@@ -2,20 +2,22 @@ const express = require('express');
 const router = express.Router();
 const casos = require('../../models/casos')
 
+const { isAuthenticated } = require('../../middlewares/auth');
+
 // GET /casos - lista todos os casos
-router.get('/', async (req, res) => {
+router.get('/', isAuthenticated, async (req, res) => {
   let list_casos = await casos.findAll({raw: true})
   
   res.render('casos', {list_casos});
 });
 
-router.get('/lista', async (req,res) => {
+router.get('/lista', isAuthenticated, async (req,res) => {
   const list_casos = await casos.findAll({raw: true})
   res.json(list_casos)
 })
 
-router.get('/novo', (req,res)=> {
-  res.render('registrarsemana')
+router.get('/analise', (req,res) => {
+  res.render('analise', {analise: true});
 })
 
 router.post('/novo', async (req, res) => {

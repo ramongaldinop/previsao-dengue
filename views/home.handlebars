@@ -1,3 +1,10 @@
 <div class="main-txt">
     <h1>Server D-Vision rodando com sucesso!</h1>
+    {{#if unauthorized}}
+        <form action="/login" method="post">
+            <h2>Insira a senha:</h2>
+            <input type="password" name='senha' placeholder="senha">
+            <input type="submit">
+        </form>
+    {{/if}}    
 </div>

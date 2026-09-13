@@ -13,14 +13,16 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/"><img src="logo.png" alt="logo"></a>
+            <a href="/"><img src="/logo.png" alt="logo"></a>
         </div>
         <nav id="navbar">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/casos">Ver Semanas</a></li>
-            <li><a href="/analise">Análise</a></li>
-        </ul>
+        {{#unless unauthorized}}
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/casos">Ver Semanas</a></li>
+                <li><a href="/casos/analise">Análise</a></li>
+            </ul>
+        {{/unless}}
     </nav>
     </header>
     {{{body}}}
