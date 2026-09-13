@@ -3,7 +3,7 @@
     {{#each list_casos}}
         <div class="semana-display">
             <p><b>Semana:</b> {{this.semana_epidemiologica}}</p>
-            <p><b>Data de inicio:</b> {{this.data_inicio}}</p>
+            <p><b>Data de inicio:</b> {{formatTime this.data_inicio "LL"}}
             <p><b>Casos:</b> {{this.num_casos}}</p>
             <p><b>Nível de alerta:</b> {{this.nivel_alerta}}</p>
         </div>

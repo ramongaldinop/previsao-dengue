@@ -4,8 +4,8 @@ const casos = require('../../models/casos')
 
 // GET /casos - lista todos os casos
 router.get('/', async (req, res) => {
-  const list_casos = await casos.findAll({raw: true})
-
+  let list_casos = await casos.findAll({raw: true})
+  
   res.render('casos', {list_casos});
 });
 

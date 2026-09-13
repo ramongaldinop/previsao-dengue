@@ -1,8 +1,10 @@
 const express = require('express');
 const exphbs = require('express-handlebars')
-require('dotenv').config();
 
-const casosdb = require('./models/casos')
+// módulos estáticos:
+require('dotenv').config();
+require('./src/hbrsHelper')
+
 const conn = require('./db/conn')
 
 // Rotas
