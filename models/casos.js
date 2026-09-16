@@ -1,3 +1,4 @@
+// ORM - Módulo de "simplificação" da integração com o BD
 const { DataTypes } = require('sequelize')
 const db = require('../db/conn')
 

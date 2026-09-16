@@ -13,11 +13,13 @@ const PORT = process.env.PORT || 8000;
 app.engine("handlebars",exphbs.engine())
 app.set("view engine","handlebars")
 
+// Core modules
 // inicialização de interfaces básicas
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+// Configuração da sessão
 app.use(session({
     secret: 'aquelela',
     saveUninitialized: true,
@@ -28,6 +30,7 @@ app.use(session({
     }
 }))
 
+// rota home
 app.get('/', (req, res) => {
   if (req.session.auth === true) {
     console.log(req.session.auth)
@@ -38,7 +41,7 @@ app.get('/', (req, res) => {
   }
 });
 
-// Rotas
+// Subrotas
 const casos = require('./src/casos');
 const login = require('./src/login');
 
