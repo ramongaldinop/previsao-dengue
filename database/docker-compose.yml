@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:16
+    container_name: dengue_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dengue
+      POSTGRES_PASSWORD: dengue
+      POSTGRES_DB: dengue_db
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      # dados persistem entre restarts do container
+      - dengue_pgdata:/var/lib/postgresql/data
+      # scripts de init rodam em ordem alfabética SÓ na primeira vez
+      # (volume dengue_pgdata vazio). Para re-rodar, dê "docker compose down -v".
+      - ./schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+      - ./previsoes.sql:/docker-entrypoint-initdb.d/03_previsoes.sql:ro
+      - ./sp_dengue_pronto.csv:/docker-entrypoint-initdb.d/sp_dengue_pronto.csv:ro
+
+volumes:
+  dengue_pgdata:
