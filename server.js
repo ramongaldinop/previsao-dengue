@@ -4,7 +4,7 @@ const session = require('express-session')
 
 // módulos estáticos:
 require('dotenv').config();
-require('./src/hbrsHelper')
+require('./src/hbrsHelper'); // Helper do handlebars
 
 const app = express();
 const PORT = process.env.PORT || 8000;

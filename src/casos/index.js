@@ -1,23 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const casos = require('../../models/casos')
+const casos = require('../../models/casos');
 
 const { isAuthenticated } = require('../../middlewares/auth');
 
 // GET /casos - lista todos os casos
 router.get('/', isAuthenticated, async (req, res) => {
-  let list_casos = await casos.findAll({raw: true})
-  
+  let list_casos = await casos.getAllCasos();
+
   res.render('casos', {list_casos});
 });
 
 router.get('/lista', isAuthenticated, async (req,res) => {
-  const list_casos = await casos.findAll({raw: true})
+  const list_casos = await casos.getAllCasos()
   res.json(list_casos)
 })
 
 router.get('/analise', (req,res) => {
-  res.render('analise', {analise: true});
+  res.render('analise', {analise: true}); //analise: true para importar o CDN do plotly
 })
 
 router.post('/novo', async (req, res) => {

@@ -1,8 +1,12 @@
-const {Sequelize} = require('sequelize')
+const { Pool } = require('pg');
 
-const sequelize = new Sequelize('dvision', process.env.DB_USERNAME, process.env.PW, {
-    host: process.env.HOST,
-    dialect: 'postgres',
-})
+// Configurações do banco de dados
+const pool = new Pool({
+  user: process.env.DB_USERNAME,
+  host: process.env.HOST,
+  database: process.env.PG_DATABASE,
+  password: 'admin',
+  port: process.env.PG_PORT,
+});
 
-module.exports = sequelize
+module.exports = pool;

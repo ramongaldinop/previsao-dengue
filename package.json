@@ -18,7 +18,7 @@
     "express-handlebars": "^9.0.1",
     "express-session": "^1.19.0",
     "moment": "^2.30.1",
-    "pg": "^8.23.0",
+    "pg": "^8.23.1",
     "plotly.js-dist": "^4.1.0",
     "sequelize": "^6.37.8"
   },
