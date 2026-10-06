@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS casos_dengue (
 CREATE INDEX IF NOT EXISTS idx_casos_dengue_data ON casos_dengue(data_inicio);
 CREATE INDEX IF NOT EXISTS idx_casos_dengue_municipio ON casos_dengue(municipio_nome);
 
--- Previsões geradas pelo modelo (ml-dengue) de 2 e 4 semanas à frente
+-- Previsões geradas pelo modelo (ml-dengue) de 1 e 4 semanas à frente
 CREATE TABLE IF NOT EXISTS previsoes (
     id SERIAL PRIMARY KEY,
     data_base DATE NOT NULL,
