@@ -33,10 +33,8 @@ app.use(session({
 // rota home
 app.get('/', (req, res) => {
   if (req.session.auth === true) {
-    console.log(req.session.auth)
     res.render('home');
   } else {
-    console.log(req.session.auth)
     res.render('home', {unauthorized: true})
   }
 });

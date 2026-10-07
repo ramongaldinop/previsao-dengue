@@ -5,7 +5,7 @@ this.addEventListener('DOMContentLoaded', async () => {
 
         const semanas = dados.map(d => d.semana_epidemiologica);
         const temperatura = dados.map(d => d.temp_media);
-        const casos = dados.map(d => d.num_casos);
+        const casos = dados.map(d => d.casos);
 
         function corAlerta(nivel) {
             const cores = {

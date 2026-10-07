@@ -12,7 +12,7 @@ router.get('/', isAuthenticated, async (req, res) => {
 });
 
 router.get('/lista', isAuthenticated, async (req,res) => {
-  const list_casos = await casos.getAllCasos()
+  const list_casos = await casos.getCasos(5)
   res.json(list_casos)
 })
 
