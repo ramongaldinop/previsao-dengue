@@ -6,7 +6,7 @@ const { isAuthenticated } = require('../../middlewares/auth');
 
 // GET /casos - lista todos os casos
 router.get('/', isAuthenticated, async (req, res) => {
-  let list_casos = await casos.getAllCasos();
+  let list_casos = await casos.getCasos(12);
 
   res.render('casos', {list_casos});
 });

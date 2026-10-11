@@ -14,16 +14,26 @@
     <header>
         <div class="logo">
             <a href="/"><img src="/logo.png" alt="logo"></a>
+        
+        {{#if unauthorized}}
         </div>
-        <nav id="navbar">
+        {{/if}}
+
         {{#unless unauthorized}}
+
+        <form action="/login/logout" method="post">
+                <button class="sair" type="submit">Sair</button>
+            </form>
+        </div>
+
+        <nav id="navbar">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/casos">Ver Semanas</a></li>
                 <li><a href="/casos/analise">Análise</a></li>
             </ul>
+        </nav>
         {{/unless}}
-    </nav>
     </header>
     {{{body}}}
 </body>

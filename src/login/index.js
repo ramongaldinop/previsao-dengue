@@ -7,7 +7,16 @@ router.post('/', (req,res)=> {
     if (password === process.env.SYS_PASSWORD) {
         req.session.auth = true
         res.redirect('/')
+    } else {
+        const error = "Senha incorreta!"
+        res.render('error', {error: {login: true, description: error}, unauthorized: true})
     }
+})
+
+router.post('/logout', (req,res) => {
+    req.session.destroy()
+
+    res.redirect('/')
 })
 
 module.exports = router

@@ -1,0 +1,16 @@
+<div class="error-description">
+    {{error.description}}
+</div>
+
+    {{#if error.login}}
+        <a href="/" class="error">
+            <div>Tentar novamente</div>
+        </a>
+    {{/if}}
+
+    {{#if error.notFound}}
+        <a href="/" class="error">
+            <div>Retornar a início</div>
+        </a>
+    {{/if}}
+

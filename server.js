@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
   if (req.session.auth === true) {
     res.render('home');
   } else {
-    res.render('home', {unauthorized: true})
+    res.render('home', {unauthorized: true}) //unauthorized serve para esconder a navbar
   }
 });
 
@@ -45,6 +45,10 @@ const login = require('./src/login');
 
 app.use('/casos', casos);
 app.use('/login', login);
+
+app.use((req, res)=> {
+  res.render('error', { error: {description:'Caminho não encontrado, retorne ao início:', notFound: true}, unauthorized:true})
+})
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);

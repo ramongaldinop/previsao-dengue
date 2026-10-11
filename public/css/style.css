@@ -1,6 +1,5 @@
 * {
     font-family: sans-serif;
-    justify-content: center;
 }
 
 body {
@@ -11,6 +10,12 @@ body {
 
 header {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header form{
+    align-self: auto;
 }
 
 .logo {
@@ -26,14 +31,33 @@ header {
 }
 
 .logo img {
-    width: 30%;
-    height: auto;
+    height: 95px;
+    width: auto;
+    display: block;
+}
+
+.sair {
+    color: #db0000;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 1em;
+    padding: 0.5em 0.8em;
+    border-radius: 0.5em;
+    transition: 0.2s;
+    font-size: 1em;
+}
+
+.sair:hover {
+    color: #444444;
+    background-color: #fe66665f;
+    transition: 0.2s;
 }
 
 #navbar {
     border-bottom: 1px solid #ccc;
-    padding: 1em;
-    margin-bottom: 1em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
     width: 100%;
     box-sizing: border-box;
 }
@@ -42,18 +66,31 @@ header {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 0;
+    margin-bottom: 0.5em;
+    margin-top: 0em;
     padding: 0;
 }
 
-#navbar li {
-    margin: 0 1em;
+#navbar li a{
+    margin: 0 1.5em;
+    padding: 0.5em 0.8em;
+    transition: 0.2s;
+    font-size: 1em;
 }
 
 #navbar a {
     text-decoration: none;
     color: #db7c00;
 }
+
+#navbar a:hover {
+    background-color: #feba665f;
+    border-radius: 0.5em;
+    color: #000000a9;
+    transition: 0.2s;
+}
+
+
 
 body {
     display: flex;
@@ -72,4 +109,62 @@ body {
 
 .main-txt {
     text-align: center;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    text-justify: auto;
+    align-items: center;
+}
+
+.form-control form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.form-control input {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 1px solid #db7c00;
+}
+
+.form-control button{
+    margin-top: 1em;
+    font-size: 0.9em;
+    width: 4.5em;
+    padding: 0.3em;
+    border-radius: 0.4em;
+    border: none;
+    background-color: #ffba66;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form-control button:hover{
+    background-color: #ffba66aa;
+    color: #666666;
+    transition: 0.2s;
+}
+
+/* Exceções - Error page */
+
+.error-description {
+    margin: 1em;
+    font-size: 1.5em;
+}
+
+.error {
+    color: black;
+    text-decoration: none;
+    background-color: #ffba66;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+}
+
+.error:hover{
+    background-color: #ffba66aa;
+    color: #666666;
+    transition: 0.2s;
 }
