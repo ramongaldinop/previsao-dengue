@@ -5,7 +5,8 @@ const Casos = {
     try {
       const query = 'SELECT * FROM casos_dengue ORDER BY data_inicio DESC LIMIT $1';
       const result = await db.query(query, [limit]);
-      return result.rows;
+
+      return result.rows.reverse();
     } catch (error) {
       console.log(error)
     }
