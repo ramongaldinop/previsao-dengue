@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 
 // Configurações do banco de dados
 
-if (process.env.HOST) {
+if (process.env.HOST === 0) {
   const pool = new Pool({
     user: process.env.DB_USERNAME,
     host: process.env.HOST,
